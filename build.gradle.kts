@@ -91,6 +91,7 @@ tasks {
 listOf(tasks.jar, tasks.kotlinSourcesJar).forEach {
     it {
         from("LICENSE")
+        from("NOTICE")
     }
 }
 
