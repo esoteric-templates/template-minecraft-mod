@@ -1,4 +1,4 @@
-//import java.util.jar.Attributes
+import java.util.jar.Attributes
 
 plugins {
     alias(libs.plugins.kotlin)
@@ -69,11 +69,14 @@ tasks {
         }
     }
 
-//    withType<Jar> {
-//        manifest {
+    withType<Jar> {
+        manifest {
 //            attributes[Attributes.Name.MAIN_CLASS.toString()] = application.mainClass
-//        }
-//    }
+            attributes[Attributes.Name.IMPLEMENTATION_TITLE.toString()] = "Template Kotlin Project"
+            attributes[Attributes.Name.IMPLEMENTATION_VERSION.toString()] = project.version
+            attributes[Attributes.Name.IMPLEMENTATION_VENDOR.toString()] = "Дима Ш."
+        }
+    }
 
     test {
         useJUnitPlatform()
