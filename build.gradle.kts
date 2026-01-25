@@ -22,6 +22,7 @@ java {
 }
 
 group = "org.example"
+description = "A template repository for Kotlin projects"
 
 //application {
 //    mainClass = "$group.$name.AppKt"
