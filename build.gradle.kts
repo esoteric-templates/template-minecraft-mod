@@ -94,8 +94,8 @@ tasks {
 listOf(tasks.jar, tasks.kotlinSourcesJar).forEach {
     it {
         into("META-INF") {
-            from("LICENSE")
-            from("NOTICE")
+            from("LICENSE.txt")
+            from("NOTICE.txt")
         }
     }
 }
