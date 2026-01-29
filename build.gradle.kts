@@ -2,6 +2,7 @@ import java.util.jar.Attributes
 
 plugins {
     alias(libs.plugins.kotlin)
+    alias(libs.plugins.kotlin.serialization)
 //    application
 }
 
@@ -10,6 +11,8 @@ repositories {
 }
 
 dependencies {
+    implementation(libs.kotlin.serialization)
+
     testImplementation(libs.kotlin.test)
     testImplementation(libs.junit.jupiter)
     testRuntimeOnly(libs.junit.platform)

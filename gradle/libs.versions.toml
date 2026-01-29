@@ -1,13 +1,19 @@
 [versions]
+kotlin-serialization = "1.10.0"
+
 junit-jupiter = "5.12.1"
 
 
-kotlin = "2.1.20"
+plugin-kotlin = "2.3.0"
+plugin-kotlin-serialization = "2.3.0"
 
 [libraries]
+kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.10.0" }
+
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit-jupiter" }
 junit-platform = { module = "org.junit.platform:junit-platform-launcher" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test-junit5" }
 
 [plugins]
-kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "plugin-kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "plugin-kotlin-serialization" }
