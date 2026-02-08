@@ -11,3 +11,6 @@ gradlew.bat
 
 # Ignore unneeded Kotlin data
 .kotlin/
+
+# Client and server test runs
+run/
