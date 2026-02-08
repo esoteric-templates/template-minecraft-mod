@@ -14,6 +14,9 @@ dependencies {
     minecraft(libs.minecraft)
     mappings(loom.officialMojangMappings())
 
+    modImplementation(libs.fabric)
+    modImplementation(libs.fabric.api)
+
     implementation(libs.kotlin.serialization)
 
     testImplementation(libs.kotlin.test)

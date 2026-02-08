@@ -1,5 +1,7 @@
 [versions]
 minecraft = "1.21.11"
+fabric = "0.18.4"
+fabric-api = "0.141.3+1.21.11"
 
 kotlin-serialization = "1.10.0"
 
@@ -13,6 +15,8 @@ plugin-loom = "1.15.3"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
+fabric = { module = "net.fabricmc:fabric-loader", version.ref = "fabric" }
+fabric-api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric-api" }
 
 kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlin-serialization" }
 
