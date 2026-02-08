@@ -19,7 +19,7 @@
 				devShell = pkgs.mkShell {
 					buildInputs = with pkgs; [
 						git
-						gradle
+						gradle_9
 					];
 				};
 			});
