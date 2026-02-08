@@ -1,4 +1,6 @@
 [versions]
+minecraft = "1.21.11"
+
 kotlin-serialization = "1.10.0"
 
 junit-jupiter = "5.12.1"
@@ -10,6 +12,8 @@ plugin-kotlin-serialization = "2.3.0"
 plugin-loom = "1.15.3"
 
 [libraries]
+minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
+
 kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlin-serialization" }
 
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit-jupiter" }

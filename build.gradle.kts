@@ -3,7 +3,7 @@ import java.util.jar.Attributes
 plugins {
     alias(libs.plugins.kotlin)
     alias(libs.plugins.kotlin.serialization)
-//    application
+    alias(libs.plugins.loom)
 }
 
 repositories {
@@ -11,6 +11,9 @@ repositories {
 }
 
 dependencies {
+    minecraft(libs.minecraft)
+    mappings(loom.officialMojangMappings())
+
     implementation(libs.kotlin.serialization)
 
     testImplementation(libs.kotlin.test)
@@ -26,10 +29,6 @@ java {
 
 group = "org.example"
 description = "A template repository for Kotlin projects"
-
-//application {
-//    mainClass = "$group.$name.AppKt"
-//}
 
 version = ProcessBuilder("git", "describe", "--tags", "--always", "--dirty")
     .directory(project.projectDir)
@@ -75,7 +74,6 @@ tasks {
 
     withType<Jar> {
         manifest {
-//            attributes[Attributes.Name.MAIN_CLASS.toString()] = application.mainClass
             attributes[Attributes.Name.IMPLEMENTATION_TITLE.toString()] = "Template Kotlin Project"
             attributes[Attributes.Name.IMPLEMENTATION_VERSION.toString()] = project.version
             attributes[Attributes.Name.IMPLEMENTATION_VENDOR.toString()] = "Дима Ш."
@@ -86,14 +84,6 @@ tasks {
         useJUnitPlatform()
     }
 }
-
-//listOf(tasks.distTar, tasks.distZip).forEach {
-//    it {
-//        from("assets/text/licenses/") {
-//            into("licenses/")
-//        }
-//    }
-//}
 
 listOf(tasks.jar, tasks.kotlinSourcesJar).forEach {
     it {
