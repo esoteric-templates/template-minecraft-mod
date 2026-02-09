@@ -1,0 +1,29 @@
+{
+	"schemaVersion": 1,
+	"id": "template",
+	"version": "${version}",
+	"name": "Template Minecraft Mod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Esoteric Enderman"
+	],
+	"contact": {
+		"sources": "https://gitlab.com/-/p/79330421"
+	},
+	"license": "AGPL-3.0-only",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"org.example.template.TemplateMod"
+		],
+		"client": [
+			"org.example.template.TemplateModClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.18.2",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

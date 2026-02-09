@@ -41,7 +41,30 @@ version = ProcessBuilder("git", "describe", "--tags", "--always", "--dirty")
     .readText()
     .trim()
 
+loom {
+    splitEnvironmentSourceSets()
+
+    mods {
+        register("template") {
+            sourceSet("main")
+            sourceSet("client")
+        }
+    }
+}
+
 tasks {
+    processResources {
+        inputs.property("version", project.version)
+
+        filesMatching("fabric.mod.json") {
+            expand(
+                mapOf(
+                    "version" to inputs.properties["version"]
+                )
+            )
+        }
+    }
+
     withType<AbstractArchiveTask> {
         isPreserveFileTimestamps = false
         isReproducibleFileOrder = true

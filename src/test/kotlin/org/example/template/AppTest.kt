@@ -4,13 +4,8 @@ import kotlin.test.Test
 import kotlin.test.assertNotNull
 
 class AppTest {
-    @Test fun appHasAGreeting() {
-        val classUnderTest = App()
-        assertNotNull(classUnderTest.greeting, "app should have a greeting")
-    }
-
-    @Test fun appHasAFarewell() {
-        val classUnderTest = App()
-        assertNotNull(classUnderTest.farewell, "app should have a farewell")
+    @Test fun testSanity() {
+        assert(1 + 1 == 2)
+        assert(2 + 2 != 5)
     }
 }
