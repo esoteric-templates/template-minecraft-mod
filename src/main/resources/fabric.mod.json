@@ -14,10 +14,16 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"org.example.template.TemplateMod"
+			{
+				"value": "org.example.template.TemplateMod",
+				"adapter": "kotlin"
+			}
 		],
 		"client": [
-			"org.example.template.TemplateModClient"
+			{
+				"value": "org.example.template.TemplateModClient",
+				"adapter": "kotlin"
+			}
 		]
 	},
 	"depends": {
