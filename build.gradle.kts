@@ -17,6 +17,8 @@ dependencies {
     modImplementation(libs.fabric)
     modImplementation(libs.fabric.api)
 
+    modImplementation(libs.fabric.kotlin)
+
     implementation(libs.kotlin.serialization)
 
     testImplementation(libs.kotlin.test)
