@@ -11,3 +11,6 @@ gradlew.bat
 
 # Ignore unneeded Kotlin data
 .kotlin/
+
+# Java crashes / out of memory errors
+java_pid*.hprof
