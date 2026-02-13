@@ -118,6 +118,7 @@ listOf(tasks.jar, tasks.kotlinSourcesJar).forEach {
         into("META-INF") {
             from("LICENSE.txt")
             from("NOTICE.txt")
+            from("docs/DISCLAIMER.txt")
         }
     }
 }
