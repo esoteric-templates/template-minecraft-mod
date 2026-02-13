@@ -5,9 +5,17 @@
 	"name": "Template Minecraft Mod",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"Esoteric Enderman"
+		{
+			"name": "Esoteric Enderman",
+			"contact": {
+				"homepage": "https://shdima.gitlab.io/",
+				"email": "dima.o.sh@proton.me"
+			}
+		}
 	],
 	"contact": {
+		"homepage": "https://gitlab.com/-/p/79330421",
+		"issues": "https://gitlab.com/esoteric-templates/templates/template-minecraft-mod/-/issues",
 		"sources": "https://gitlab.com/-/p/79330421"
 	},
 	"license": "AGPL-3.0-only",
