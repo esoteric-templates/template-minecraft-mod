@@ -48,7 +48,7 @@ java {
 }
 
 group = "org.example"
-description = "A template repository for Kotlin projects"
+description = "A template repository for Minecraft Fabric mods."
 
 version = ProcessBuilder("git", "describe", "--tags", "--always", "--dirty")
     .directory(project.projectDir)

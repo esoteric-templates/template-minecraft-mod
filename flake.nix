@@ -1,5 +1,5 @@
 {
-	description = "A template repository for Kotlin projects";
+	description = "A template repository for Minecraft Fabric mods.";
 
 	inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
