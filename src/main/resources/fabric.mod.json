@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "template",
+	"id": "${name}",
 	"version": "${version}",
 	"name": "Template Minecraft Mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "${description}",
 	"authors": [
 		{
 			"name": "Esoteric Enderman",
@@ -23,13 +23,13 @@
 	"entrypoints": {
 		"main": [
 			{
-				"value": "org.example.template.TemplateMod",
+				"value": "${group}.${name}.TemplateMod",
 				"adapter": "kotlin"
 			}
 		],
 		"client": [
 			{
-				"value": "org.example.template.TemplateModClient",
+				"value": "${group}.${name}.TemplateModClient",
 				"adapter": "kotlin"
 			}
 		]

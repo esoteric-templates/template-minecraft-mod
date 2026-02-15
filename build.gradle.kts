@@ -62,7 +62,7 @@ loom {
     splitEnvironmentSourceSets()
 
     mods {
-        register("template") {
+        register(project.name) {
             sourceSet("main")
             sourceSet("client")
         }
@@ -109,9 +109,18 @@ tasks {
         inputs.property("fabric_api_version", libs.versions.fabric.api.get())
         inputs.property("java_version", java.toolchain.languageVersion.get().asInt())
 
+        inputs.property("name", project.name)
+        inputs.property("group", project.group)
+
+        inputs.property("description", project.description)
+
         filesMatching("fabric.mod.json") {
             expand(
                 mapOf(
+                    "name" to inputs.properties["name"],
+                    "group" to inputs.properties["group"],
+                    "description" to inputs.properties["description"],
+
                     "minecraft_version" to inputs.properties["minecraft_version"],
                     "fabric_version" to inputs.properties["fabric_version"],
                     "fabric_kotlin_version" to inputs.properties["fabric_kotlin_version"],
