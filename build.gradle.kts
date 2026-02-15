@@ -35,10 +35,6 @@ dependencies {
     modImplementation(libs.fabric.kotlin)
 
     implementation(libs.kotlin.serialization)
-
-    testImplementation(libs.kotlin.test)
-    testImplementation(libs.junit.jupiter)
-    testRuntimeOnly(libs.junit.platform)
 }
 
 java {
@@ -173,10 +169,6 @@ tasks {
             attributes[Attributes.Name.IMPLEMENTATION_VERSION.toString()] = project.version
             attributes[Attributes.Name.IMPLEMENTATION_VENDOR.toString()] = "Дима Ш."
         }
-    }
-
-    test {
-        useJUnitPlatform()
     }
 }
 

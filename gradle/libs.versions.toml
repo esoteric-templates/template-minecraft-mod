@@ -8,8 +8,6 @@ kotlin-serialization = "1.10.0"
 
 batik = "1.19"
 
-junit-jupiter = "5.12.1"
-
 
 plugin-kotlin = "2.3.0"
 plugin-kotlin-serialization = "2.3.0"
@@ -26,10 +24,6 @@ kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-j
 
 batik-transcoder = { module = "org.apache.xmlgraphics:batik-transcoder", version.ref = "batik" }
 batik-codec = { module = "org.apache.xmlgraphics:batik-codec", version.ref = "batik" }
-
-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit-jupiter" }
-junit-platform = { module = "org.junit.platform:junit-platform-launcher" }
-kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test-junit5" }
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "plugin-kotlin" }
