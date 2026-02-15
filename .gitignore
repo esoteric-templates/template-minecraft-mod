@@ -14,3 +14,6 @@ gradlew.bat
 
 # Client and server test runs
 run/
+
+# Java crashes / out of memory errors
+java_pid*.hprof
