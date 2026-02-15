@@ -1,4 +1,19 @@
+import org.apache.batik.transcoder.SVGAbstractTranscoder
+import org.apache.batik.transcoder.TranscoderInput
+import org.apache.batik.transcoder.TranscoderOutput
+import org.apache.batik.transcoder.image.PNGTranscoder
 import java.util.jar.Attributes
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath(libs.batik.transcoder)
+        classpath(libs.batik.codec)
+    }
+}
 
 plugins {
     alias(libs.plugins.kotlin)
@@ -54,7 +69,38 @@ loom {
     }
 }
 
+val generatedResources: Directory = layout.buildDirectory.dir("generated/resources").get()
+
+sourceSets.main {
+    resources {
+        exclude("assets/${project.name}/icon.svg")
+        srcDir(generatedResources)
+    }
+}
+
 tasks {
+    val generateIcon = register("generateIcon") {
+        val inputFile = file("src/main/resources/assets/${project.name}/icon.svg")
+        val outputFile = generatedResources.file("assets/${project.name}/icon.png").asFile
+
+        inputs.file(inputFile)
+        outputs.file(outputFile)
+
+        doLast {
+            outputFile.parentFile.mkdirs()
+
+            val transcoder = PNGTranscoder()
+
+            transcoder.addTranscodingHint(SVGAbstractTranscoder.KEY_WIDTH, 128F)
+            transcoder.addTranscodingHint(SVGAbstractTranscoder.KEY_HEIGHT, 128F)
+
+            val input = TranscoderInput(inputFile.toURI().toString())
+            val output = TranscoderOutput(outputFile.outputStream())
+
+            transcoder.transcode(input, output)
+        }
+    }
+
     processResources {
         inputs.property("version", project.version)
 
@@ -65,6 +111,8 @@ tasks {
                 )
             )
         }
+
+        dependsOn(generateIcon)
     }
 
     withType<AbstractArchiveTask> {

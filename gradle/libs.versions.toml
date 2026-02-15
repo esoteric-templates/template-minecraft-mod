@@ -6,6 +6,8 @@ fabric-kotlin = "1.13.9+kotlin.2.3.10"
 
 kotlin-serialization = "1.10.0"
 
+batik = "1.19"
+
 junit-jupiter = "5.12.1"
 
 
@@ -21,6 +23,9 @@ fabric-api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fab
 fabric-kotlin = { module = "net.fabricmc:fabric-language-kotlin", version.ref = "fabric-kotlin" }
 
 kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlin-serialization" }
+
+batik-transcoder = { module = "org.apache.xmlgraphics:batik-transcoder", version.ref = "batik" }
+batik-codec = { module = "org.apache.xmlgraphics:batik-codec", version.ref = "batik" }
 
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit-jupiter" }
 junit-platform = { module = "org.junit.platform:junit-platform-launcher" }
