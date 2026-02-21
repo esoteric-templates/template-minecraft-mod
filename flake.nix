@@ -17,15 +17,20 @@
 				};
 			in {
 				devShell = pkgs.mkShell {
-					buildInputs = with pkgs; [
+					nativeBuildInputs = with pkgs; [
 						git
 						gradle_9
-						udev
 					];
 
-					shellHook = ''
-						export LD_LIBRARY_PATH=${pkgs.udev}/lib:$LD_LIBRARY_PATH
-					'';
+					env = {
+						LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath (with pkgs; [
+							libGL
+							glfw3-minecraft
+							libpulseaudio
+							flite
+							udev
+						]);
+					};
 				};
 			});
 }
