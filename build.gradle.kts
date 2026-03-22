@@ -1,111 +1,111 @@
 import java.util.jar.Attributes
 
 plugins {
-    alias(libs.plugins.kotlin)
-    alias(libs.plugins.kotlin.serialization)
-//    application
+	alias(libs.plugins.kotlin)
+	alias(libs.plugins.kotlin.serialization)
+//	application
 }
 
 repositories {
-    mavenCentral()
+	mavenCentral()
 }
 
 dependencies {
-    implementation(libs.kotlin.serialization)
+	implementation(libs.kotlin.serialization)
 
-    testImplementation(libs.kotlin.test)
-    testImplementation(libs.junit.jupiter)
-    testRuntimeOnly(libs.junit.platform)
+	testImplementation(libs.kotlin.test)
+	testImplementation(libs.junit.jupiter)
+	testRuntimeOnly(libs.junit.platform)
 }
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
 }
 
 group = "org.example"
 description = "A template repository for Kotlin projects"
 
 //application {
-//    mainClass = "$group.$name.AppKt"
+//	mainClass = "$group.$name.AppKt"
 //}
 
 version = ProcessBuilder("git", "describe", "--tags", "--always", "--dirty")
-    .directory(project.projectDir)
-    .start()
-    .inputStream
-    .bufferedReader()
-    .readText()
-    .trim()
+	.directory(project.projectDir)
+	.start()
+	.inputStream
+	.bufferedReader()
+	.readText()
+	.trim()
 
 tasks {
-    withType<AbstractArchiveTask> {
-        isPreserveFileTimestamps = false
-        isReproducibleFileOrder = true
+	withType<AbstractArchiveTask> {
+		isPreserveFileTimestamps = false
+		isReproducibleFileOrder = true
 
-        filePermissions {
-            user.read = true
-            user.write = true
-            user.execute = false
+		filePermissions {
+			user.read = true
+			user.write = true
+			user.execute = false
 
-            group.read = true
-            group.write = false
-            group.execute = false
+			group.read = true
+			group.write = false
+			group.execute = false
 
-            other.read = true
-            other.write = false
-            other.execute = false
-        }
+			other.read = true
+			other.write = false
+			other.execute = false
+		}
 
-        dirPermissions {
-            user.read = true
-            user.write = true
-            user.execute = true
+		dirPermissions {
+			user.read = true
+			user.write = true
+			user.execute = true
 
-            group.read = true
-            group.write = false
-            group.execute = true
+			group.read = true
+			group.write = false
+			group.execute = true
 
-            other.read = false
-            other.write = false
-            other.execute = true
-        }
-    }
+			other.read = false
+			other.write = false
+			other.execute = true
+		}
+	}
 
-    withType<Jar> {
-        manifest {
-//            attributes[Attributes.Name.MAIN_CLASS.toString()] = application.mainClass
-            attributes[Attributes.Name.IMPLEMENTATION_TITLE.toString()] = "Template Kotlin Project"
-            attributes[Attributes.Name.IMPLEMENTATION_VERSION.toString()] = project.version
-            attributes[Attributes.Name.IMPLEMENTATION_VENDOR.toString()] = "Дима Ш."
-        }
-    }
+	withType<Jar> {
+		manifest {
+//			attributes[Attributes.Name.MAIN_CLASS.toString()] = application.mainClass
+			attributes[Attributes.Name.IMPLEMENTATION_TITLE.toString()] = "Template Kotlin Project"
+			attributes[Attributes.Name.IMPLEMENTATION_VERSION.toString()] = project.version
+			attributes[Attributes.Name.IMPLEMENTATION_VENDOR.toString()] = "Дима Ш."
+		}
+	}
 
-    test {
-        useJUnitPlatform()
-    }
+	test {
+		useJUnitPlatform()
+	}
 }
 
 //listOf(tasks.distTar, tasks.distZip).forEach {
-//    it {
-//        from("assets/text/licenses/") {
-//            into("licenses/")
-//        }
-//    }
+//	it {
+//		from("assets/text/licenses/") {
+//			into("licenses/")
+//		}
+//	}
 //}
 
 listOf(tasks.jar, tasks.kotlinSourcesJar).forEach {
-    it {
-        into("META-INF") {
-            from("LICENSE.txt")
-            from("NOTICE.txt")
-        }
-    }
+	it {
+		into("META-INF") {
+			from("LICENSE.txt")
+			from("NOTICE.txt")
+		}
+	}
 }
 
 configurations.all {
-    resolutionStrategy {
-        failOnNonReproducibleResolution()
-    }
+	resolutionStrategy {
+		failOnNonReproducibleResolution()
+	}
 }
