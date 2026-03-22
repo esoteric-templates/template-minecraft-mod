@@ -9,8 +9,7 @@ kotlin-serialization = "1.10.0"
 batik = "1.19"
 
 
-plugin-kotlin = "2.3.0"
-plugin-kotlin-serialization = "2.3.0"
+plugin-kotlin = "2.3.10"
 
 plugin-loom = "1.15.3"
 
@@ -27,6 +26,6 @@ batik-codec = { module = "org.apache.xmlgraphics:batik-codec", version.ref = "ba
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "plugin-kotlin" }
-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "plugin-kotlin-serialization" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "plugin-kotlin" }
 
 loom = { id = "net.fabricmc.fabric-loom-remap", version.ref = "plugin-loom" }
