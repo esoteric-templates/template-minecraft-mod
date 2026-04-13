@@ -16,5 +16,6 @@ object TemplateMod : ModInitializer {
 
 	override fun onInitialize() {
 		logger.info("Hello Fabric world!")
+		logger.debug("Mod version: {}", container.metadata.version)
 	}
 }

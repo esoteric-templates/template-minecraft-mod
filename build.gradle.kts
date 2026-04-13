@@ -63,6 +63,8 @@ loom {
 			sourceSet("client")
 		}
 	}
+
+	log4jConfigs.from("conf/log.xml")
 }
 
 val generatedResources: Directory = layout.buildDirectory.dir("generated/resources").get()
