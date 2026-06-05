@@ -2,7 +2,7 @@
 	description = "A template repository for Minecraft Fabric mods.";
 
 	inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+		nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 		flake-utils.url = "github:numtide/flake-utils";
 	};
 
@@ -20,6 +20,7 @@
 					nativeBuildInputs = with pkgs; [
 						git
 						gradle_9
+						openjdk25
 					];
 
 					env = {

@@ -27,19 +27,18 @@ repositories {
 
 dependencies {
 	minecraft(libs.minecraft)
-	mappings(loom.officialMojangMappings())
 
-	modImplementation(libs.fabric.loader)
-	modImplementation(libs.fabric.api)
+	implementation(libs.fabric.loader)
+	implementation(libs.fabric.api)
 
-	modImplementation(libs.fabric.kotlin)
+	implementation(libs.fabric.kotlin)
 
 	implementation(libs.kotlin.serialization)
 }
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(21)
+		languageVersion = JavaLanguageVersion.of(25)
 	}
 }
 
