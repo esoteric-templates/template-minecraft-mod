@@ -81,9 +81,10 @@ tasks {
 			outputFile.parentFile.mkdirs()
 
 			val transcoder = PNGTranscoder()
+			val sizePixels = 128F
 
-			transcoder.addTranscodingHint(SVGAbstractTranscoder.KEY_WIDTH, 128F)
-			transcoder.addTranscodingHint(SVGAbstractTranscoder.KEY_HEIGHT, 128F)
+			transcoder.addTranscodingHint(SVGAbstractTranscoder.KEY_WIDTH, sizePixels)
+			transcoder.addTranscodingHint(SVGAbstractTranscoder.KEY_HEIGHT, sizePixels)
 
 			val input = TranscoderInput(inputFile.toURI().toString())
 			val output = TranscoderOutput(outputFile.outputStream())
