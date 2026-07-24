@@ -36,12 +36,6 @@ dependencies {
 	implementation(libs.kotlin.serialization)
 }
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(25)
-	}
-}
-
 group = "org.example"
 description = "A template repository for Minecraft Fabric mods."
 
@@ -110,7 +104,7 @@ tasks {
 					"fabric_version" to libs.versions.fabric.loader.get(),
 					"fabric_kotlin_version" to libs.versions.fabric.kotlin.get(),
 					"fabric_api_version" to libs.versions.fabric.api.get(),
-					"java_version" to java.toolchain.languageVersion.get().asInt(),
+					"java_version" to JavaVersion.current().majorVersion.toInt(),
 					"version" to project.version
 				)
 			)
