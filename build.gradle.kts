@@ -36,6 +36,8 @@ dependencies {
 	implementation(libs.kotlin.serialization)
 }
 
+val projectName = "Template Minecraft Fabric Mod"
+
 group = "org.example"
 description = "Template Minecraft Fabric mod"
 
@@ -97,7 +99,8 @@ tasks {
 		filesMatching("fabric.mod.json") {
 			expand(
 				mapOf(
-					"name" to project.name,
+					"id" to project.name,
+					"name" to projectName,
 					"group" to project.group,
 					"description" to project.description,
 
@@ -149,7 +152,7 @@ tasks {
 
 	withType<Jar> {
 		manifest {
-			attributes[Attributes.Name.IMPLEMENTATION_TITLE.toString()] = "Template Minecraft Fabric Mod"
+			attributes[Attributes.Name.IMPLEMENTATION_TITLE.toString()] = projectName
 			attributes[Attributes.Name.IMPLEMENTATION_VERSION.toString()] = project.version
 			attributes[Attributes.Name.IMPLEMENTATION_VENDOR.toString()] = "Дима Ш."
 		}

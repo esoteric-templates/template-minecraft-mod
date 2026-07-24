@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "${name}",
+	"id": "${id}",
 	"version": "${version}",
-	"name": "Template Minecraft Fabric Mod",
+	"name": "${name}",
 	"description": "${description}.",
 	"authors": [
 		{
@@ -23,13 +23,13 @@
 	"entrypoints": {
 		"main": [
 			{
-				"value": "${group}.${name}.TemplateMod",
+				"value": "${group}.${id}.TemplateMod",
 				"adapter": "kotlin"
 			}
 		],
 		"client": [
 			{
-				"value": "${group}.${name}.TemplateModClient",
+				"value": "${group}.${id}.TemplateModClient",
 				"adapter": "kotlin"
 			}
 		]
