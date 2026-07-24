@@ -2,8 +2,8 @@
 	"schemaVersion": 1,
 	"id": "${name}",
 	"version": "${version}",
-	"name": "Template Minecraft Mod",
-	"description": "${description}",
+	"name": "Template Minecraft Fabric Mod",
+	"description": "${description}.",
 	"authors": [
 		{
 			"name": "Esoteric Enderman",

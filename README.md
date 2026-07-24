@@ -1,5 +1,5 @@
-Template Minecraft Mod
-======================
+Template Minecraft Fabric Mod
+=============================
 
 Links
 -----

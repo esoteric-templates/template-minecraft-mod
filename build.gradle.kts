@@ -37,7 +37,7 @@ dependencies {
 }
 
 group = "org.example"
-description = "A template repository for Minecraft Fabric mods."
+description = "Template Minecraft Fabric mod"
 
 version = ProcessBuilder("git", "describe", "--tags", "--always", "--dirty")
 	.directory(project.projectDir)
@@ -148,7 +148,7 @@ tasks {
 
 	withType<Jar> {
 		manifest {
-			attributes[Attributes.Name.IMPLEMENTATION_TITLE.toString()] = "Template Kotlin Project"
+			attributes[Attributes.Name.IMPLEMENTATION_TITLE.toString()] = "Template Minecraft Fabric Mod"
 			attributes[Attributes.Name.IMPLEMENTATION_VERSION.toString()] = project.version
 			attributes[Attributes.Name.IMPLEMENTATION_VENDOR.toString()] = "Дима Ш."
 		}
